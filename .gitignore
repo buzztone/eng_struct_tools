@@ -1,0 +1,37 @@
+# Ignore the IGNORE folder
+IGNORE/
+
+# Project Folders
+eng_struct_tools/screenshots/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Python package metadata
+*.egg-info/
+.installed.cfg
+
+# Common Python ignores
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg
+
