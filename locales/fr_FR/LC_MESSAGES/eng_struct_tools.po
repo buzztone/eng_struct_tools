@@ -1,0 +1,290 @@
+# French translation for Engineering Structural Tools
+# Copyright (C) 2024 Neil Murray
+# This file is distributed under the same license as the Engineering Structural Tools package.
+# Neil Murray <neilmrr75@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Engineering Structural Tools 0.1.0\n"
+"Report-Msgid-Bugs-To: neilmrr75@gmail.com\n"
+"POT-Creation-Date: 2025-01-02 12:00+0000\n"
+"PO-Revision-Date: 2025-01-02 12:00+0000\n"
+"Last-Translator: Neil Murray <neilmrr75@gmail.com>\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# Main application strings
+msgid "Engineering Structural Tools"
+msgstr "Outils d'Ingénierie Structurelle"
+
+msgid "Welcome to Engineering Structural Tools"
+msgstr "Bienvenue dans les Outils d'Ingénierie Structurelle"
+
+msgid "Select a tool from the menu above to begin structural analysis and design."
+msgstr "Sélectionnez un outil dans le menu ci-dessus pour commencer l'analyse et la conception structurelle."
+
+msgid "Ready"
+msgstr "Prêt"
+
+# Menu items
+msgid "&File"
+msgstr "&Fichier"
+
+msgid "&New Project"
+msgstr "&Nouveau Projet"
+
+msgid "&Open Project"
+msgstr "&Ouvrir Projet"
+
+msgid "E&xit"
+msgstr "&Quitter"
+
+msgid "&Tools"
+msgstr "&Outils"
+
+msgid "&Help"
+msgstr "&Aide"
+
+msgid "&About"
+msgstr "À &propos"
+
+# Status messages
+msgid "Create a new project"
+msgstr "Créer un nouveau projet"
+
+msgid "Open an existing project"
+msgstr "Ouvrir un projet existant"
+
+msgid "Exit application"
+msgstr "Quitter l'application"
+
+msgid "About this application"
+msgstr "À propos de cette application"
+
+# Common UI elements
+msgid "Calculate"
+msgstr "Calculer"
+
+msgid "Clear"
+msgstr "Effacer"
+
+msgid "Export Results"
+msgstr "Exporter les Résultats"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Apply"
+msgstr "Appliquer"
+
+msgid "Close"
+msgstr "Fermer"
+
+# Units and measurements
+msgid "Length"
+msgstr "Longueur"
+
+msgid "Width"
+msgstr "Largeur"
+
+msgid "Height"
+msgstr "Hauteur"
+
+msgid "Thickness"
+msgstr "Épaisseur"
+
+msgid "Force"
+msgstr "Force"
+
+msgid "Moment"
+msgstr "Moment"
+
+msgid "Stress"
+msgstr "Contrainte"
+
+msgid "Pressure"
+msgstr "Pression"
+
+# Engineering terms
+msgid "Concrete Strength"
+msgstr "Résistance du Béton"
+
+msgid "Steel Strength"
+msgstr "Résistance de l'Acier"
+
+msgid "Cover"
+msgstr "Enrobage"
+
+msgid "Bearing Capacity"
+msgstr "Capacité Portante"
+
+msgid "Unit Weight"
+msgstr "Poids Unitaire"
+
+msgid "Design Code"
+msgstr "Code de Calcul"
+
+# Footing design specific
+msgid "Footing Design"
+msgstr "Conception de Fondations"
+
+msgid "Applied Loads"
+msgstr "Charges Appliquées"
+
+msgid "Footing Geometry"
+msgstr "Géométrie de la Fondation"
+
+msgid "Material Properties"
+msgstr "Propriétés des Matériaux"
+
+msgid "Soil Properties"
+msgstr "Propriétés du Sol"
+
+msgid "Axial Load"
+msgstr "Charge Axiale"
+
+msgid "Moment X"
+msgstr "Moment X"
+
+msgid "Moment Y"
+msgstr "Moment Y"
+
+msgid "Shear X"
+msgstr "Effort Tranchant X"
+
+msgid "Shear Y"
+msgstr "Effort Tranchant Y"
+
+# Results and calculations
+msgid "Results"
+msgstr "Résultats"
+
+msgid "Calculation Log"
+msgstr "Journal de Calcul"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Parameter"
+msgstr "Paramètre"
+
+msgid "Value"
+msgstr "Valeur"
+
+msgid "Unit"
+msgstr "Unité"
+
+# Error messages
+msgid "Validation errors:"
+msgstr "Erreurs de validation :"
+
+msgid "Calculation failed:"
+msgstr "Échec du calcul :"
+
+msgid "Missing required parameter:"
+msgstr "Paramètre requis manquant :"
+
+msgid "Parameter {param} must be positive"
+msgstr "Le paramètre {param} doit être positif"
+
+msgid "Applied bearing pressure exceeds allowable capacity"
+msgstr "La pression de portance appliquée dépasse la capacité admissible"
+
+# Progress and status
+msgid "Loading {plugin}..."
+msgstr "Chargement de {plugin}..."
+
+msgid "Starting footing design calculation..."
+msgstr "Démarrage du calcul de conception de fondation..."
+
+msgid "Calculation completed successfully."
+msgstr "Calcul terminé avec succès."
+
+msgid "Inputs cleared."
+msgstr "Entrées effacées."
+
+msgid "Export functionality not yet implemented."
+msgstr "Fonctionnalité d'exportation pas encore implémentée."
+
+# Pluralization examples
+msgid "1 error found"
+msgid_plural "{count} errors found"
+msgstr[0] "1 erreur trouvée"
+msgstr[1] "{count} erreurs trouvées"
+
+msgid "1 warning"
+msgid_plural "{count} warnings"
+msgstr[0] "1 avertissement"
+msgstr[1] "{count} avertissements"
+
+# Context-specific translations
+msgctxt "menu"
+msgid "File"
+msgstr "Fichier"
+
+msgctxt "document"
+msgid "File"
+msgstr "Fichier"
+
+msgctxt "button"
+msgid "Save"
+msgstr "Enregistrer"
+
+msgctxt "menu"
+msgid "Save"
+msgstr "Enregistrer"
+
+# Configuration and settings
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Units"
+msgstr "Unités"
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "Auto-save"
+msgstr "Sauvegarde automatique"
+
+msgid "Recent Files"
+msgstr "Fichiers récents"
+
+# Help and documentation
+msgid "User Manual"
+msgstr "Manuel d'Utilisation"
+
+msgid "Getting Started"
+msgstr "Premiers Pas"
+
+msgid "Tutorials"
+msgstr "Tutoriels"
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Report Bug"
+msgstr "Signaler un Bug"
+
+# About dialog
+msgid "About Engineering Structural Tools"
+msgstr "À propos des Outils d'Ingénierie Structurelle"
+
+msgid "A modular plugin-based application for structural engineering analysis and design."
+msgstr "Une application modulaire basée sur des plugins pour l'analyse et la conception en ingénierie structurelle."
+
+msgid "Built with PyQt6 and Python."
+msgstr "Construit avec PyQt6 et Python."
+
+msgid "© 2024 Neil Murray"
+msgstr "© 2024 Neil Murray"

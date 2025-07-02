@@ -72,7 +72,7 @@ class FootingDesignWidget(QWidget):
         # Control buttons
         button_layout = QHBoxLayout()
 
-        self.calculate_button = QPushButton("Calculate")
+        self.calculate_button = QPushButton(self.plugin._("Calculate"))
         self.calculate_button.setStyleSheet(
             """
             QPushButton {
@@ -93,12 +93,12 @@ class FootingDesignWidget(QWidget):
         )
         button_layout.addWidget(self.calculate_button)
 
-        self.clear_button = QPushButton("Clear")
+        self.clear_button = QPushButton(self.plugin._("Clear"))
         button_layout.addWidget(self.clear_button)
 
         button_layout.addStretch()
 
-        self.export_button = QPushButton("Export Results")
+        self.export_button = QPushButton(self.plugin._("Export Results"))
         button_layout.addWidget(self.export_button)
 
         layout.addLayout(button_layout)
@@ -109,7 +109,7 @@ class FootingDesignWidget(QWidget):
         layout = QVBoxLayout(panel)
 
         # Loads group
-        self.loads_group = ParameterGroup("Applied Loads")
+        self.loads_group = ParameterGroup(self.plugin._("Applied Loads"))
         self.loads_group.add_parameter(
             "axial_load", "Axial Load (N)", "double", 1000000.0, range_values=(0, 1e9)
         )
@@ -128,7 +128,7 @@ class FootingDesignWidget(QWidget):
         layout.addWidget(self.loads_group)
 
         # Geometry group
-        self.geometry_group = ParameterGroup("Footing Geometry")
+        self.geometry_group = ParameterGroup(self.plugin._("Footing Geometry"))
         self.geometry_group.add_parameter(
             "length", "Length (mm)", "double", 2000.0, range_values=(100, 10000)
         )
@@ -141,7 +141,7 @@ class FootingDesignWidget(QWidget):
         layout.addWidget(self.geometry_group)
 
         # Material properties group
-        self.material_group = ParameterGroup("Material Properties")
+        self.material_group = ParameterGroup(self.plugin._("Material Properties"))
         self.material_group.add_parameter(
             "concrete_strength",
             "Concrete Strength (MPa)",
@@ -162,7 +162,7 @@ class FootingDesignWidget(QWidget):
         layout.addWidget(self.material_group)
 
         # Soil properties group
-        self.soil_group = ParameterGroup("Soil Properties")
+        self.soil_group = ParameterGroup(self.plugin._("Soil Properties"))
         self.soil_group.add_parameter(
             "bearing_capacity",
             "Bearing Capacity (MPa)",
@@ -176,7 +176,7 @@ class FootingDesignWidget(QWidget):
         layout.addWidget(self.soil_group)
 
         # Design code group
-        self.code_group = ParameterGroup("Design Code")
+        self.code_group = ParameterGroup(self.plugin._("Design Code"))
         self.code_group.add_parameter(
             "design_code",
             "Design Code",

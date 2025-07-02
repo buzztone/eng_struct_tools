@@ -29,7 +29,10 @@ from PyQt6.QtGui import QAction, QIcon, QPixmap
 
 from .plugin_manager import PluginManager
 from .config import ConfigManager
+from .i18n_manager import I18nManager, set_i18n_manager, _
+from .l10n_utils import LocalizationUtils, set_l10n_utils
 from ..shared_libs.common_ui_widgets import StatusWidget
+from ..shared_libs.unit_converter import UnitConverter
 
 
 class MainWindow(QMainWindow):
@@ -44,18 +47,31 @@ class MainWindow(QMainWindow):
     plugin_selected = pyqtSignal(str)  # Emitted when a plugin is selected
     status_message = pyqtSignal(str, int)  # Message, timeout in ms
 
-    def __init__(self, config_manager: ConfigManager, plugin_manager: PluginManager):
+    def __init__(
+        self,
+        config_manager: ConfigManager,
+        plugin_manager: PluginManager,
+        i18n_manager: I18nManager,
+        l10n_utils: LocalizationUtils,
+    ):
         """
         Initialize the main window.
 
         Args:
             config_manager: Configuration manager instance
             plugin_manager: Plugin manager instance
+            i18n_manager: Internationalization manager instance
+            l10n_utils: Localization utilities instance
         """
         super().__init__()
         self.config_manager = config_manager
         self.plugin_manager = plugin_manager
+        self.i18n_manager = i18n_manager
+        self.l10n_utils = l10n_utils
         self.logger = logging.getLogger(__name__)
+
+        # Set up locale change observer
+        self.i18n_manager.add_locale_observer(self._on_locale_changed)
 
         # Initialize UI components
         self._setup_ui()
@@ -71,7 +87,7 @@ class MainWindow(QMainWindow):
     def _setup_ui(self) -> None:
         """Set up the main UI components."""
         # Set window properties
-        self.setWindowTitle("Engineering Structural Tools")
+        self.setWindowTitle(_("Engineering Structural Tools"))
         self.setMinimumSize(1200, 800)
 
         # Create central widget with stacked layout for plugin UIs
@@ -106,7 +122,7 @@ class MainWindow(QMainWindow):
         layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Welcome message
-        welcome_label = QLabel("Welcome to Engineering Structural Tools")
+        welcome_label = QLabel(_("Welcome to Engineering Structural Tools"))
         welcome_label.setStyleSheet(
             """
             QLabel {
@@ -122,7 +138,9 @@ class MainWindow(QMainWindow):
 
         # Instructions
         instructions = QLabel(
-            "Select a tool from the menu above to begin structural analysis and design."
+            _(
+                "Select a tool from the menu above to begin structural analysis and design."
+            )
         )
         instructions.setStyleSheet(
             """
@@ -145,48 +163,112 @@ class MainWindow(QMainWindow):
         menubar = self.menuBar()
 
         # File menu
-        file_menu = menubar.addMenu("&File")
+        file_menu = menubar.addMenu(_("&File"))
 
         # New project action
-        new_action = QAction("&New Project", self)
+        new_action = QAction(_("&New Project"), self)
         new_action.setShortcut("Ctrl+N")
-        new_action.setStatusTip("Create a new project")
+        new_action.setStatusTip(_("Create a new project"))
         new_action.triggered.connect(self._new_project)
         file_menu.addAction(new_action)
 
         # Open project action
-        open_action = QAction("&Open Project", self)
+        open_action = QAction(_("&Open Project"), self)
         open_action.setShortcut("Ctrl+O")
-        open_action.setStatusTip("Open an existing project")
+        open_action.setStatusTip(_("Open an existing project"))
         open_action.triggered.connect(self._open_project)
         file_menu.addAction(open_action)
 
         file_menu.addSeparator()
 
         # Exit action
-        exit_action = QAction("E&xit", self)
+        exit_action = QAction(_("E&xit"), self)
         exit_action.setShortcut("Ctrl+Q")
-        exit_action.setStatusTip("Exit application")
+        exit_action.setStatusTip(_("Exit application"))
         exit_action.triggered.connect(self.close)
         file_menu.addAction(exit_action)
 
         # Tools menu (will be populated by plugins)
-        self.tools_menu = menubar.addMenu("&Tools")
+        self.tools_menu = menubar.addMenu(_("&Tools"))
+
+        # Settings menu
+        settings_menu = menubar.addMenu(_("&Settings"))
+
+        # Language submenu
+        language_menu = settings_menu.addMenu(_("&Language"))
+        self._setup_language_menu(language_menu)
 
         # Help menu
-        help_menu = menubar.addMenu("&Help")
+        help_menu = menubar.addMenu(_("&Help"))
 
-        about_action = QAction("&About", self)
-        about_action.setStatusTip("About this application")
+        about_action = QAction(_("&About"), self)
+        about_action.setStatusTip(_("About this application"))
         about_action.triggered.connect(self._show_about)
         help_menu.addAction(about_action)
+
+    def _setup_language_menu(self, language_menu) -> None:
+        """Set up the language selection menu."""
+        available_locales = self.i18n_manager.get_available_locales()
+        current_locale = self.i18n_manager.get_locale()
+
+        for locale_code in available_locales:
+            try:
+                from babel import Locale
+
+                locale_obj = Locale.parse(locale_code)
+                display_name = locale_obj.display_name
+            except:
+                display_name = locale_code
+
+            action = QAction(display_name, self)
+            action.setCheckable(True)
+            action.setChecked(locale_code == current_locale)
+            action.triggered.connect(
+                lambda checked, lc=locale_code: self._change_language(lc)
+            )
+            language_menu.addAction(action)
+
+    def _change_language(self, locale_code: str) -> None:
+        """Change the application language."""
+        if self.i18n_manager.set_locale(locale_code):
+            # Language change will trigger _on_locale_changed
+            pass
+        else:
+            QMessageBox.warning(
+                self,
+                _("Language Change"),
+                _("Failed to change language to {locale}").format(locale=locale_code),
+            )
+
+    def _on_locale_changed(self, new_locale: str) -> None:
+        """Handle locale change events."""
+        # Update UI text direction if needed
+        if self.i18n_manager.is_rtl_locale():
+            self.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        else:
+            self.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+
+        # Refresh UI elements that need retranslation
+        self._retranslate_ui()
+
+    def _retranslate_ui(self) -> None:
+        """Retranslate UI elements after locale change."""
+        # Update window title
+        self.setWindowTitle(_("Engineering Structural Tools"))
+
+        # Update status bar
+        if hasattr(self, "status_label"):
+            self.status_label.setText(_("Ready"))
+
+        # Note: Menu items and other dynamic content would need more complex handling
+        # For now, we'll recommend restarting the application for full language change
 
     def _setup_status_bar(self) -> None:
         """Set up the status bar."""
         self.status_bar = self.statusBar()
 
         # Status message label
-        self.status_label = QLabel("Ready")
+        self.status_label = QLabel(_("Ready"))
         self.status_bar.addWidget(self.status_label)
 
         # Progress bar (hidden by default)
@@ -378,11 +460,25 @@ class EngStructToolsApp:
             # Initialize configuration manager
             self.config_manager = ConfigManager()
 
+            # Initialize i18n system
+            self.i18n_manager = I18nManager(self.config_manager)
+            set_i18n_manager(self.i18n_manager)
+
+            # Initialize localization utilities
+            unit_converter = UnitConverter()  # Create unit converter instance
+            self.l10n_utils = LocalizationUtils(unit_converter)
+            set_l10n_utils(self.l10n_utils)
+
             # Initialize plugin manager
             self.plugin_manager = PluginManager(self.config_manager)
 
             # Create main window
-            self.main_window = MainWindow(self.config_manager, self.plugin_manager)
+            self.main_window = MainWindow(
+                self.config_manager,
+                self.plugin_manager,
+                self.i18n_manager,
+                self.l10n_utils,
+            )
 
             # Load plugins
             self.plugin_manager.load_plugins(self.main_window)

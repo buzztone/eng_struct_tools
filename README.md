@@ -165,6 +165,8 @@ eng_struct_tools/
 - [ ] Implement reporting system
 - [ ] Add data import/export utilities (Excel, CSV, etc.)
 - [ ] Create material property database
+- [x] Internationalization (i18n) & Localization (l10n) Framework
+- [ ] User Roles & Capabilities for Plugin Access/Usage
 
 ### Testing and Quality
 - [ ] Increase test coverage to >90%
@@ -179,3 +181,82 @@ eng_struct_tools/
 - [ ] Add API reference documentation
 - [ ] Create video tutorials
 - [ ] Write plugin development guide
+
+## Internationalization (i18n) & Localization (l10n)
+
+Engineering Structural Tools includes comprehensive support for multiple languages and locales.
+
+### Supported Languages
+
+- **English (en_US)** - Default language
+- **Spanish (es_ES)** - Español
+- **French (fr_FR)** - Français
+- **German (de_DE)** - Deutsch
+
+### For Users
+
+#### Changing Language
+
+1. Open the application
+2. Go to **Settings** → **Language**
+3. Select your preferred language
+4. Restart the application for full language change
+
+#### Locale-Specific Features
+
+- **Number Formatting**: Numbers are formatted according to your locale
+- **Date/Time Formatting**: Dates and times follow local conventions
+- **Unit Systems**: Default unit systems are set based on your locale
+- **Engineering Codes**: Relevant design codes are prioritized based on your region
+
+### For Developers
+
+#### Adding Translations to Your Plugin
+
+1. **Mark Strings for Translation**:
+   ```python
+   # In your plugin code
+   class MyPlugin(PluginBase):
+       def create_ui(self):
+           button = QPushButton(self._("Calculate"))
+           label = QLabel(self._("Results"))
+   ```
+
+2. **Extract and Manage Translations**:
+   ```bash
+   # Extract translatable strings
+   python src/eng_struct_tools/tools/i18n_cli.py extract
+
+   # Create new locale
+   python src/eng_struct_tools/tools/i18n_cli.py create-locale es_ES
+
+   # Update translations
+   python src/eng_struct_tools/tools/i18n_cli.py update
+
+   # Compile translations
+   python src/eng_struct_tools/tools/i18n_cli.py compile
+   ```
+
+#### Translation Management Tools
+
+- **i18n CLI Tool**: `src/eng_struct_tools/tools/i18n_cli.py`
+- **Setup Script**: `scripts/setup_i18n.py`
+- **Update Script**: `scripts/update_translations.py`
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Contributing Translations
+
+We especially welcome translation contributions! To contribute translations:
+
+1. Check if your language is already supported
+2. If not, create a new locale using the i18n tools
+3. Translate the strings in the PO files
+4. Test your translations
+5. Submit a pull request
+
+## License
+
+This project is licensed under the AGPL License - see the [LICENSE](LICENSE) file for details.

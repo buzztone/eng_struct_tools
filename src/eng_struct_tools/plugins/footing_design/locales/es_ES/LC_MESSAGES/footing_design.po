@@ -1,0 +1,208 @@
+# Spanish translation for Footing Design Plugin
+# Copyright (C) 2024 Neil Murray
+# This file is distributed under the same license as the Footing Design Plugin package.
+# Neil Murray <neilmrr75@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Footing Design Plugin 0.1.0\n"
+"Report-Msgid-Bugs-To: neilmrr75@gmail.com\n"
+"POT-Creation-Date: 2025-01-02 12:00+0000\n"
+"PO-Revision-Date: 2025-01-02 12:00+0000\n"
+"Last-Translator: Neil Murray <neilmrr75@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Plugin info
+msgid "Footing Design"
+msgstr "Diseño de Cimentaciones"
+
+msgid "Design concrete footings according to various design codes and standards."
+msgstr "Diseñar cimentaciones de hormigón según varios códigos y estándares de diseño."
+
+msgid "Structural Design"
+msgstr "Diseño Estructural"
+
+# UI Elements
+msgid "Calculate"
+msgstr "Calcular"
+
+msgid "Clear"
+msgstr "Limpiar"
+
+msgid "Export Results"
+msgstr "Exportar Resultados"
+
+# Parameter Groups
+msgid "Applied Loads"
+msgstr "Cargas Aplicadas"
+
+msgid "Footing Geometry"
+msgstr "Geometría de la Cimentación"
+
+msgid "Material Properties"
+msgstr "Propiedades del Material"
+
+msgid "Soil Properties"
+msgstr "Propiedades del Suelo"
+
+msgid "Design Code"
+msgstr "Código de Diseño"
+
+# Load Parameters
+msgid "Axial Load"
+msgstr "Carga Axial"
+
+msgid "Moment X"
+msgstr "Momento X"
+
+msgid "Moment Y"
+msgstr "Momento Y"
+
+msgid "Shear X"
+msgstr "Cortante X"
+
+msgid "Shear Y"
+msgstr "Cortante Y"
+
+# Geometry Parameters
+msgid "Length"
+msgstr "Longitud"
+
+msgid "Width"
+msgstr "Ancho"
+
+msgid "Height"
+msgstr "Altura"
+
+msgid "Thickness"
+msgstr "Espesor"
+
+# Material Parameters
+msgid "Concrete Strength"
+msgstr "Resistencia del Hormigón"
+
+msgid "Steel Strength"
+msgstr "Resistencia del Acero"
+
+msgid "Cover"
+msgstr "Recubrimiento"
+
+# Soil Parameters
+msgid "Bearing Capacity"
+msgstr "Capacidad Portante"
+
+msgid "Unit Weight"
+msgstr "Peso Unitario"
+
+# Results
+msgid "Results"
+msgstr "Resultados"
+
+msgid "Calculation Log"
+msgstr "Registro de Cálculo"
+
+msgid "Category"
+msgstr "Categoría"
+
+msgid "Parameter"
+msgstr "Parámetro"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Unit"
+msgstr "Unidad"
+
+# Status Messages
+msgid "Loading {plugin}..."
+msgstr "Cargando {plugin}..."
+
+msgid "Starting footing design calculation..."
+msgstr "Iniciando cálculo de diseño de cimentación..."
+
+msgid "Calculation completed successfully."
+msgstr "Cálculo completado exitosamente."
+
+msgid "Inputs cleared."
+msgstr "Entradas limpiadas."
+
+msgid "Export functionality not yet implemented."
+msgstr "Funcionalidad de exportación aún no implementada."
+
+# Validation Messages
+msgid "Validation errors:"
+msgstr "Errores de validación:"
+
+msgid "Parameter {param} must be positive"
+msgstr "El parámetro {param} debe ser positivo"
+
+msgid "Applied bearing pressure exceeds allowable capacity"
+msgstr "La presión de apoyo aplicada excede la capacidad admisible"
+
+# Design Codes
+msgid "ACI 318"
+msgstr "ACI 318"
+
+msgid "Eurocode 2"
+msgstr "Eurocódigo 2"
+
+msgid "AS 3600"
+msgstr "AS 3600"
+
+# Calculation Results
+msgid "Bearing Pressure"
+msgstr "Presión de Apoyo"
+
+msgid "Maximum Bearing Pressure"
+msgstr "Presión de Apoyo Máxima"
+
+msgid "Minimum Bearing Pressure"
+msgstr "Presión de Apoyo Mínima"
+
+msgid "Eccentricity X"
+msgstr "Excentricidad X"
+
+msgid "Eccentricity Y"
+msgstr "Excentricidad Y"
+
+msgid "Effective Area"
+msgstr "Área Efectiva"
+
+msgid "Safety Factor"
+msgstr "Factor de Seguridad"
+
+msgid "Reinforcement Required"
+msgstr "Refuerzo Requerido"
+
+msgid "Minimum Reinforcement"
+msgstr "Refuerzo Mínimo"
+
+# Units
+msgid "kN"
+msgstr "kN"
+
+msgid "kN⋅m"
+msgstr "kN⋅m"
+
+msgid "mm"
+msgstr "mm"
+
+msgid "m"
+msgstr "m"
+
+msgid "MPa"
+msgstr "MPa"
+
+msgid "kPa"
+msgstr "kPa"
+
+msgid "kN/m³"
+msgstr "kN/m³"
+
+msgid "mm²/m"
+msgstr "mm²/m"

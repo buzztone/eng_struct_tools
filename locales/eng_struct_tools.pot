@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Engineering Structural Tools 0.1.0\n"
+"Report-Msgid-Bugs-To: neilmrr75@gmail.com\n"
+"POT-Creation-Date: 2025-01-02 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Main application strings
+msgid "Engineering Structural Tools"
+msgstr ""
+
+msgid "Welcome to Engineering Structural Tools"
+msgstr ""
+
+msgid "Select a tool from the menu above to begin structural analysis and design."
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+# Menu items
+msgid "&File"
+msgstr ""
+
+msgid "&New Project"
+msgstr ""
+
+msgid "&Open Project"
+msgstr ""
+
+msgid "E&xit"
+msgstr ""
+
+msgid "&Tools"
+msgstr ""
+
+msgid "&Help"
+msgstr ""
+
+msgid "&About"
+msgstr ""
+
+# Status messages
+msgid "Create a new project"
+msgstr ""
+
+msgid "Open an existing project"
+msgstr ""
+
+msgid "Exit application"
+msgstr ""
+
+msgid "About this application"
+msgstr ""
+
+# Common UI elements
+msgid "Calculate"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Export Results"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+# Units and measurements
+msgid "Length"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Thickness"
+msgstr ""
+
+msgid "Force"
+msgstr ""
+
+msgid "Moment"
+msgstr ""
+
+msgid "Stress"
+msgstr ""
+
+msgid "Pressure"
+msgstr ""
+
+# Engineering terms
+msgid "Concrete Strength"
+msgstr ""
+
+msgid "Steel Strength"
+msgstr ""
+
+msgid "Cover"
+msgstr ""
+
+msgid "Bearing Capacity"
+msgstr ""
+
+msgid "Unit Weight"
+msgstr ""
+
+msgid "Design Code"
+msgstr ""
+
+# Footing design specific
+msgid "Footing Design"
+msgstr ""
+
+msgid "Applied Loads"
+msgstr ""
+
+msgid "Footing Geometry"
+msgstr ""
+
+msgid "Material Properties"
+msgstr ""
+
+msgid "Soil Properties"
+msgstr ""
+
+msgid "Axial Load"
+msgstr ""
+
+msgid "Moment X"
+msgstr ""
+
+msgid "Moment Y"
+msgstr ""
+
+msgid "Shear X"
+msgstr ""
+
+msgid "Shear Y"
+msgstr ""
+
+# Results and calculations
+msgid "Results"
+msgstr ""
+
+msgid "Calculation Log"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Parameter"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Unit"
+msgstr ""
+
+# Error messages
+msgid "Validation errors:"
+msgstr ""
+
+msgid "Calculation failed:"
+msgstr ""
+
+msgid "Missing required parameter:"
+msgstr ""
+
+msgid "Parameter {param} must be positive"
+msgstr ""
+
+msgid "Applied bearing pressure exceeds allowable capacity"
+msgstr ""
+
+# Progress and status
+msgid "Loading {plugin}..."
+msgstr ""
+
+msgid "Starting footing design calculation..."
+msgstr ""
+
+msgid "Calculation completed successfully."
+msgstr ""
+
+msgid "Inputs cleared."
+msgstr ""
+
+msgid "Export functionality not yet implemented."
+msgstr ""
+
+# Pluralization examples
+msgid "1 error found"
+msgid_plural "{count} errors found"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 warning"
+msgid_plural "{count} warnings"
+msgstr[0] ""
+msgstr[1] ""
+
+# Context-specific translations
+msgctxt "menu"
+msgid "File"
+msgstr ""
+
+msgctxt "document"
+msgid "File"
+msgstr ""
+
+msgctxt "button"
+msgid "Save"
+msgstr ""
+
+msgctxt "menu"
+msgid "Save"
+msgstr ""
+
+# Configuration and settings
+msgid "Settings"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Units"
+msgstr ""
+
+msgid "Theme"
+msgstr ""
+
+msgid "Auto-save"
+msgstr ""
+
+msgid "Recent Files"
+msgstr ""
+
+# Help and documentation
+msgid "User Manual"
+msgstr ""
+
+msgid "Getting Started"
+msgstr ""
+
+msgid "Tutorials"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Report Bug"
+msgstr ""
+
+# About dialog
+msgid "About Engineering Structural Tools"
+msgstr ""
+
+msgid "A modular plugin-based application for structural engineering analysis and design."
+msgstr ""
+
+msgid "Built with PyQt6 and Python."
+msgstr ""
+
+msgid "© 2024 Neil Murray"
+msgstr ""

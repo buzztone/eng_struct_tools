@@ -72,6 +72,14 @@ class ConfigManager:
             "logging/console_enabled": True,
             "logging/max_file_size": 10485760,  # 10MB
             "logging/backup_count": 5,
+            # Internationalization settings
+            "i18n/locale": None,  # Auto-detect if None
+            "i18n/fallback_locale": "en_US",
+            "i18n/auto_detect": True,
+            "i18n/date_format": "medium",
+            "i18n/number_format": "decimal",
+            "i18n/currency": "USD",
+            "i18n/timezone": None,  # Auto-detect if None
         }
 
         self.logger.info("Configuration manager initialized")
